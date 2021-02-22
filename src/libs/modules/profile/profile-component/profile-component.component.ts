@@ -1,20 +1,22 @@
-// import { ReadVarExpr } from '@angular/compiler';
-// ModuleWithComponentFactories
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-profile-component',
+  templateUrl: './profile-component.component.html',
+  styleUrls: ['./profile-component.component.css']
 })
-export class AppComponent {
+export class ProfileComponentComponent implements OnInit {
+
   title = 'myappA';
   value = ""
   file: File;
   imagePath: any;
   url: any;
+  
+  constructor() { }
 
-
+  ngOnInit(): void {
+  }
 
 
   fileChange(event) {
@@ -32,6 +34,5 @@ export class AppComponent {
     this.url = ""
     this.value = ""
   }
+
 }
-
-

@@ -1,0 +1,28 @@
+<ul class='title'>
+    <li>Mood Detector</li>
+    <li style="float:right; margin-right: 20px;">Log Out</li>
+</ul>
+
+<div class='logo-container'>
+    <img class='logo' src="../assets/mood.svg" alt="mood" />
+</div>
+<div class='center-input'>
+    <p>Let's see how do you feel today!, paste a photo URL or simply choose a photo from your library</p>
+    <mat-card class="input-link">
+        <mat-form-field class="example-form-field">
+            <mat-label>Input Photo URL</mat-label>
+            <input matInput type="url" [(ngModel)]="value" />
+            <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="valueReset()">
+                <mat-icon>x</mat-icon>
+            </button>
+        </mat-form-field>
+        <input type="file" style="display: none" #file (change)="fileChange($event)" />
+        <button mat-raised-button color="primary" type="button" class="btn" (click)="file.click()">
+            Browse
+        </button>
+        <button mat-raised-button color="primary">Detect</button>
+    </mat-card>
+</div>
+<div class='image-container'>
+    <img class="face-image" src={{url}}>
+</div>
