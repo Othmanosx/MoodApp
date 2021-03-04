@@ -1,0 +1,70 @@
+.example-form-field {
+    padding-right: 10px;
+  }
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
+  p{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: larger;
+    margin: 0 100px;
+    margin-top: 30px;
+  }
+  li {
+    float: left;
+  }
+  .main{
+    margin-left: 20px;
+  }
+  .logout{
+    text-align: right;
+    margin-right: 20px;
+    display: inline;
+  }
+  .input-link {
+    text-align: center;
+    margin-top: 100px;
+    background-color: white;
+    margin: 50px 100px;
+    border-radius: 10px;
+    height: auto;
+    max-width: 450px;
+  }
+  .center-input{
+    text-align: -webkit-center;
+  }
+  .logo-container{
+    text-align: center;
+  }
+  .logo{
+    
+    width: 150px;
+  }
+  button {
+    margin: 5px;
+  }
+  nav{
+    height: 50px;
+    background-color: #673ab7;
+  }
+  .title {
+    padding-left: 20px;
+    color: white;
+    font-size: larger;
+    margin-top: 0;
+    padding-top: 18px;
+    height: 40px;
+    background-color: #673ab7;
+    margin-bottom: 50px;
+  }
+  .face-image{
+    max-height: 400px;
+  }
+  .image-container{
+    text-align: center;
+  }
+  

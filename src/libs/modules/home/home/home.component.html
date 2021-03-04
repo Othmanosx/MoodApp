@@ -1,0 +1,29 @@
+<div class='logo-container'>
+    <img class='logo' src="../assets/mood.svg" alt="mood" />
+</div>
+<div class='center-input'>
+    <p>Let's see how do you feel today!, paste a photo URL or simply choose a photo from your library</p>
+    <mat-card class="input-link">
+        <form [formGroup]='value' (ngSubmit)="onSubmit()">
+            <mat-form-field class="example-form-field">
+                <mat-label>Input Photo URL</mat-label>
+                <!-- [(ngModel)]="value" -->
+
+                <input matInput type="url" formControlName='url_data' />
+                <mat-error *ngIf="value.get('url_data').errors?.pattern">Please enter valid url.</mat-error>
+                <button mat-button *ngIf="value"  type="button" matSuffix mat-icon-button aria-label="Clear" (click)="valueReset()">
+                    <mat-icon>x</mat-icon>
+                </button>
+            </mat-form-field>
+            <input type="file" style="display: none" #file (change)="fileChange($event)" />
+        <button mat-raised-button color="primary" type="button" class="btn" (click)="file.click()">
+            Browse
+        </button>
+        <button mat-raised-button color="primary" type="submit" [disabled]='!value.valid'>Detect</button>
+        </form>
+        
+    </mat-card>
+</div>
+<div class='image-container'>
+    <img class="face-image" src={{url}}>
+</div>
