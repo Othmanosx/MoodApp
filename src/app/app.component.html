@@ -1,4 +1,4 @@
-<!-- <ul class='title'>
+<ul class='title'>
   <li>Mood Detector</li>
   <li style="float:right; margin-right: 20px;">Log Out</li>
 </ul>
@@ -9,13 +9,18 @@
 <div class='center-input'>
   <p>Let's see how do you feel today!, paste a photo URL or simply choose a photo from your library</p>
   <mat-card class="input-link">
+    <form [formGroup]='value'>
     <mat-form-field class="example-form-field">
       <mat-label>Input Photo URL</mat-label>
-      <input matInput type="url" [(ngModel)]="value" />
+      <!-- [(ngModel)]="value" -->
+
+      <input matInput type="url" formControlName = 'url_data'   />
+      <mat-error *ngIf="value.get('url_data').errors?.pattern">Please enter valid url.</mat-error>
       <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="valueReset()">
         <mat-icon>x</mat-icon>
       </button>
     </mat-form-field>
+  </form>
     <input type="file" style="display: none" #file (change)="fileChange($event)" />
     <button mat-raised-button color="primary" type="button" class="btn" (click)="file.click()">
       Browse
@@ -25,6 +30,12 @@
 </div>
 <div class='image-container'>
   <img class="face-image" src={{url}}>
-</div> -->
+</div>
+<!-- <ul class='title'>
+  <li>Mood Detector</li>
+  <!-- <li style="float:right; margin-right: 20px;">Log In</li>
+  <li style="float:right; margin-right: 20px;">Log Out</li> -->
+  <!-- <li style="float:right; margin-right: 20px;">Languages</li> -->
+<!-- </ul>  -->
 
 <router-outlet></router-outlet>
